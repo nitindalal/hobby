@@ -1,0 +1,10 @@
+<p>Show the map here</p>
+
+<%= gmaps({ "direction" => {
+                    "data"    => { "from" => @route.stops.first.to_coordinates.join(','), "to" => @route.stops.last.to_coordinates.join(',')} , 
+                    "options" => { "waypoints" => @way_points, "display_panel" => true, "panel_id" => "instructions", "suppress_markers" => true}
+              }
+      })
+ %>
+
+<%= yield :scripts %>

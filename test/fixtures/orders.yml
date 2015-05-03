@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  source_type: MyString
+  source_id: 1
+  destination_type: MyString
+  destination_id: 1
+  preferred_time: 2015-05-01 17:38:28
+  user_id: 1
+
+two:
+  source_type: MyString
+  source_id: 1
+  destination_type: MyString
+  destination_id: 1
+  preferred_time: 2015-05-01 17:38:28
+  user_id: 1
