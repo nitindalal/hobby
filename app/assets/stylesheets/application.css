@@ -11,3 +11,10 @@
  *= require_self
  *= require_tree .
  */
+
+.route_map_show {
+  height: 700px;
+  .gm-style-iw{
+    overflow: visible !important;
+  }
+}

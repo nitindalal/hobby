@@ -7,5 +7,10 @@
 window.Hobby =
   Models: {}
   Collections: {}
-  Routers: {}
   Views: {}
+  Routers: {}
+  init: -> 
+    @router = new Hobby.Routers.ApplicationRouter()
+    Backbone.history.start({pushState: true, hashChange: false})
+
+Backbone.EventBus = _.extend({}, Backbone.Events)
