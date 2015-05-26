@@ -5,7 +5,15 @@ gem 'rails', '3.2.16'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+group :development, :test do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
 gem 'rails-backbone', :git => 'git://github.com/codebrew/backbone-rails.git'
 gem 'underscore-rails'
 
