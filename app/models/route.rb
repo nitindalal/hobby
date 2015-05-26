@@ -1,12 +1,14 @@
-class Route
-  include Mongoid::Document
-  include Mongoid::Timestamps
+class Route < ActiveRecord::Base
+  # include Mongoid::Document
+  # include Mongoid::Timestamps
 
-  field :pickups, type: Array, default: []
-  field :drops, type: Array, default: []
-  field :stops, type: Array, default: []
+  # field :pickups, type: Array, default: []
+  # field :drops, type: Array, default: []
+  # field :stops, type: Array, default: []
 
   before_save :fetch_ids
+
+  attr_accessor :pickups, :drops, :stops
 
   def self.planning_engine_element
     PlanningEngine.new
