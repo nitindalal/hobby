@@ -22,7 +22,6 @@ gem 'underscore-rails'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  gem 'gmaps4rails', '1.5.6'
   gem 'byebug'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -33,6 +32,7 @@ end
 gem 'mongoid', "3.1.6"
 gem "mongoid_migration", "~> 0.0.3"
 gem 'jquery-rails'
+gem 'gmaps4rails', '1.5.6'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

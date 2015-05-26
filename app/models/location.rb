@@ -3,7 +3,7 @@ class Location < ActiveRecord::Base
 
   attr_accessor :type
 
-  # acts_as_gmappable :process_geocoding => false
+  acts_as_gmappable :process_geocoding => false
 
   def to_coordinates
     [self.latitude, self.longitude]
