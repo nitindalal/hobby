@@ -82,7 +82,7 @@ test:
 production:
   sessions:
     default:
-      uri: 'mongodb://<nitin_zaicus>:<Welcome123>@ds031972.mongolab.com:31972/hobby_development'
+      uri: 'mongodb://nitin_zaicus:Welcome123@ds031972.mongolab.com:31972/hobby_development'
       options:
         consistency: :strong
         max_retries: 20
