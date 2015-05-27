@@ -10,10 +10,25 @@ class RoutesController < ApplicationController
     @way_points.pop
     @way_points = @way_points.drop(1)
     @way_points = @way_points.map{|a| a.to_coordinates.join(',')}
+    @route.save!
     # @json = "[{\"lat\":12.986674,\"lng\":77.647881},{\"lat\":12.993665,\"lng\":77.595712},{\"lat\":13.005139,\"lng\":77.593859},{\"lat\":13.016828,\"lng\":77.560753},{\"lat\":12.960479,\"lng\":77.56842},{\"lat\":12.939985,\"lng\":77.597624},{\"lat\":13.006452,\"lng\":77.62782},{\"lat\":13.014517,\"lng\":77.584141},{\"lat\":13.042682,\"lng\":77.590336},{\"lat\":13.097872,\"lng\":77.567033},{\"lat\":13.062417,\"lng\":77.506598},{\"lat\":13.031579,\"lng\":77.503704},{\"lat\":12.982175,\"lng\":77.431466},{\"lat\":12.812747,\"lng\":77.542204},{\"lat\":13.003572,\"lng\":77.584082},{\"lat\":12.992263,\"lng\":77.64318},{\"lat\":12.967231,\"lng\":77.661151},{\"lat\":12.964193,\"lng\":77.649408},{\"lat\":12.959728,\"lng\":77.649848},{\"lat\":12.9507,\"lng\":77.689511}]"
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @json }
+    end
+  end
+
+  def show
+    @route = Route.find(params[:id])
+    @route.stops = Location.find @route.stops
+    @way_points = @route.stops.clone
+    @way_points.pop
+    @way_points = @way_points.drop(1)
+    @way_points = @way_points.map{|a| a.to_coordinates.join(',')}
+    @route.waypoints = @way_points
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @route }
     end
   end
 end

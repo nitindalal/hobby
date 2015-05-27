@@ -6,6 +6,8 @@ class Route
   field :drops, type: Array, default: []
   field :stops, type: Array, default: []
 
+  attr_accessor :waypoints
+
   before_save :fetch_ids
 
   def self.planning_engine_element

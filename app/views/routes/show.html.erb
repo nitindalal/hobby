@@ -1,0 +1,17 @@
+<div id="route_map">
+<div class="dev-show-map">
+  <p>Show the map here</p>
+  <div id="route_map_view" class="route_map_show" style="height: 700px; .gm-style-iw{
+    overflow: visible !important;
+  }"></div>
+<div>
+
+<%= yield %>
+</div>
+
+<script type="text/javascript">
+  window.router = new Hobby.Routers.RouteRouter({
+    route: <%= @route.to_json.html_safe %>
+  });
+
+</script>
