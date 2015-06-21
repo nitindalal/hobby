@@ -33,6 +33,7 @@ gem 'mongoid', "3.1.6"
 gem "mongoid_migration", "~> 0.0.3"
 gem 'jquery-rails'
 gem 'gmaps4rails', '1.5.6'
+gem 'bcrypt-ruby', '3.0.1'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
