@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
-  attr_accessible :address, :latitude, :longitude, :name, :role_cd, :password, :password_confirmation, :email
+  attr_accessible :address, :latitude, :longitude, :name, :role_cd, :password, :password_confirmation, :email, :remember_token
 
   before_save { |user| user.email = email.downcase }
+  before_save :create_remember_token
 
   validates :name, presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -16,6 +17,11 @@ class User < ActiveRecord::Base
   has_many :packages, :dependent => :destroy
   has_many :orders, :dependent => :destroy
 
+  private
+
+    def create_remember_token
+      self.remember_token = SecureRandom.urlsafe_base64
+    end
   
 
 end
