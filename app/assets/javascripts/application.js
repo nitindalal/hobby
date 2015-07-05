@@ -18,3 +18,5 @@
 //= require backbone_datalink
 //= require backbone/hobby
 //= require_tree .
+//= require jquery_nested_form
+

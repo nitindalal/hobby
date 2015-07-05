@@ -1,0 +1,16 @@
+<div id="package">
+<p>
+Packages
+<br/><%= f.link_to_add "Add Package", :packages, :id => 'add-packages-id' %>
+</p>
+<%count = 1 %>
+<%= f.fields_for(:packages, :html => { :class => "field"}) do |ff| %>
+  <%=count %>)
+  <div class="field">
+    <%= ff.label :volume, "Volume" %>
+    <%= ff.number_field :volume %>
+  </div>
+  <%count = count+1 %>
+  <%= ff.link_to_remove raw("<span> Remove Package</span>") %>
+<% end %>
+</div>
