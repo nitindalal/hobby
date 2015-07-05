@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :address, :latitude, :longitude, :name, :role_cd, :password, :password_confirmation, :email, :remember_token
+  attr_accessible :address, :latitude, :longitude, :name, :role, :role_cd, :password, :password_confirmation, :email, :remember_token
 
   before_save { |user| user.email = email.downcase }
   before_save :create_remember_token
@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
 
   has_many :packages, :dependent => :destroy
   has_many :orders, :dependent => :destroy
+  as_enum :role, [:manager, :last_mile], :column => 'role_cd'
 
   private
 
