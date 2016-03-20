@@ -1,5 +1,5 @@
 class Order < ActiveRecord::Base
-  attr_accessible :destination_id, :preferred_time, :source_id, :user_id, :source, :destination, :order_type_cd, :packages_attributes, :source_type, :destination_type, :order_type, :accepted
+  attr_accessible :destination_id, :preferred_time, :source_id, :user_id, :source, :destination, :order_type_cd, :packages_attributes, :source_type, :destination_type, :order_type, :accepted, :send_details, :final_pick_confirmation, :complete_delivery_confirmation
 
   attr_accessor :source, :destination, :order_type
 
