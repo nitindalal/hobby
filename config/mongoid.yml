@@ -88,5 +88,4 @@ production:
         max_retries: 20
         retry_interval: 0
   options:
-    identity_map_enabled: true
     include_type_for_serialization: true
