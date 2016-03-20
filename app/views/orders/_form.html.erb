@@ -36,15 +36,32 @@
     <%= f.number_field :user_id %>
   </div>
 
-  <div class="field">
-    <%= f.check_box :accepted %>
-    <%= f.label :accepted %>
-  </div>
+  <% if can? :update, @order %>
+    <div class="field">
+      <%= f.check_box :accepted %>
+      <%= f.label :accepted %>
+    </div>
 
-  <div class="field">
-    <%= f.label :order_type %><br />
-    <%= f.select :order_type, Order.order_types.keys, {:include_blank => true} %>
-  </div>
+    <div class="field">
+      <%= f.check_box :send_details %>
+      <%= f.label :send_details %>
+    </div>
+
+    <div class="field">
+      <%= f.check_box :final_pick_confirmation %>
+      <%= f.label :final_pick_confirmation %>
+    </div>
+
+    <div class="field">
+      <%= f.check_box :complete_delivery_confirmation %>
+      <%= f.label :complete_delivery_confirmation %>
+    </div>
+
+    <div class="field">
+      <%= f.label :order_type %><br />
+      <%= f.select :order_type, Order.order_types.keys, {:include_blank => true} %>
+    </div>
+  <% end %>
 
   <%= render :partial => '/common/packages', :locals => { :f => f } %>
 
